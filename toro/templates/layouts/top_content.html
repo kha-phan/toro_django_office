@@ -1,0 +1,24 @@
+<div class="page-wrapper">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-3">
+            <div class="page-header-title">
+                <h1 class="segment-title-header">{{ segment.title }}</h1>
+                <div>
+                    <a {% if not segment.submenu %}class="blue-segment-part"{% endif %}>{{ segment.name }}</a>
+                    {% if segment.submenu %}>
+                        <a {% if not segment.action %}class="blue-segment-part"{% endif %}>{{ segment.submenu }}</a>
+                    {% endif %}
+                    {% if segment.action %}> <a class="blue-segment-part"> {{ segment.action }}</a> {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            {% if segment.create_url and has_creation_perm %}
+                <a href="{{ segment.create_url }}">
+                    <button class="btn btn-primary create-btn">+ New</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>

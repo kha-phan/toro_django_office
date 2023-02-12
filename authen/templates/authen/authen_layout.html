@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Toro Django Office
+    </title> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}">
+    <!-- fontawesome icon -->
+    <link rel="stylesheet" href="{% static 'fonts/fontawesome/css/fontawesome-all.min.css' %}">
+    <!-- animation css -->
+    <link rel="stylesheet" href="{% static 'plugins/animation/css/animate.min.css' %}">
+
+    <!-- vendor css -->
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <!-- Specific CSS goes HERE -->
+    {% block stylesheets %}{% endblock stylesheets %}
+
+</head>
+
+<body>
+
+{% block content %}
+{% endblock content %}
+
+
+<!-- Required Js -->
+<script src="{% static 'js/vendor-all.min.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/pcoded.min.js' %}"></script>
+<script src="{% static 'js/authentication/login.js' %}"></script>
+{% block javascripts %}
+{% endblock %}
+</body>
+</html>
+

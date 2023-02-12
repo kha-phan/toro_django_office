@@ -1,0 +1,72 @@
+{% extends "authen/authen_layout.html" %}
+{% load static %}
+{% load custom_fields %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{% static 'css/authen_style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="pcoded-inner-content">
+        <div class="main-body">
+            <div class="page-wrapper">
+                <div class="auth-wrapper">
+                    <div class="form-wrapper ">
+                        <form role="form" method="post" action="" class="login-form">
+                            <div class="center-elem form-header">
+                                <h1>Sign In</h1>
+                            </div>
+                    
+                            {% csrf_token %}
+                            {% for e in form.non_field_errors %}
+                                <div class="form-error">{{ e|escape }}</div>
+                            {% endfor %}
+                            {{ form.username | hidden_label_field:'Username' }}
+                            <div class="form-group data-input-wrapper">
+                                <label class="input-label hidden-label" for="login-password">Password</label>
+                                <div class="input-group">
+                                    {{ form.password }}
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">
+                                            <i class="fas fa-eye" id="login-pass-toggle-icon"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% if form.password.errors %}
+                                {% for e in form.password.errors %}
+                                    <div class="form-error form-field-error">{{ e|escape }}</div>
+                                {% endfor %}
+                            {% endif %}
+
+                            <div class="form-group">
+                                <div class="text-left font-weight-light">
+                                    <div class="form-check-remember">
+                                        {{ form.remember_me }}
+                                        <label class="form-check-label" for="id_remember_me">Keep me logged in</label>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="center-elem">
+                                <button type="submit" name="login" class="login-btn btn btn-primary shadow-2 mb-4 px-5 text-light">
+                                    Sign in
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+{% block javascripts %}
+<script>
+    window.addEventListener('load', function() {
+        document.querySelector('#id-username').onfocusout = function() {
+                this.value = this.value.toLowerCase();
+            }
+    })
+</script>
+{% endblock %}

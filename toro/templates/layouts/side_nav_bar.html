@@ -1,0 +1,52 @@
+{% load static %}
+<nav class="pcoded-navbar">
+    <div class="navbar-wrapper">
+        <div class="navbar-brand header-logo">
+            <a href="/" class="b-brand">
+                <img src="{% static 'images/sidebar/logo.svg' %}" width="150px" height="150px"/>
+            </a>
+        </div>
+
+        <div class="navbar-content scroll-div">
+            <ul class="nav pcoded-inner-navbar">
+                <div class="menu-breaker"></div>
+                <li class="nav-item {% if not segment %}active{% endif %}">
+                    <a href="/" class="nav-link ">
+                        <span class="pcoded-micon">
+                            <img class="menu-item-icon" src="{% static 'images/menu/home.svg' %}"/>
+                        </span>
+                        <span class="pcoded-mtext">Home</span>
+                    </a>
+                </li>
+
+                {% if perms.auth.view_role or perms.auth.view_user %}
+                    <div class="menu-breaker"></div>
+                    <li class="nav-item pcoded-hasmenu {% if segment.name == 'Users & Permissions' %}active pcoded-trigger{% endif %}">
+                        <a href="javascript:" class="nav-link ">
+                            <span class="pcoded-micon">
+                                <img class="menu-item-icon" src="{% static 'images/menu/users&perms.svg' %}"/>
+                            </span>
+                            <span class="pcoded-mtext">Users & Permissions</span>
+                        </a>
+                        <ul class="pcoded-submenu">
+                            {% if perms.auth.view_role %}
+                                <div class="menu-breaker"></div>
+                                <li class="submenu-item {% if segment.submenu == 'Roles' %}selected{% endif %}">
+                                    <a href="{% url 'view-role' %}" class="">Roles</a>
+                                </li>
+                            {% endif %}
+
+                            {% if perms.auth.view_user %}
+                                <div class="menu-breaker"></div>
+                                <li class="submenu-item {% if segment.submenu == 'Users' %}selected{% endif %}">
+                                    <a href="{% url 'view-user' %}" class="">Users</a>
+                                </li>
+                           {% endif %}
+                      </ul>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>

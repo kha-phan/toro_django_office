@@ -1,0 +1,77 @@
+{% load static %}
+<header class="navbar pcoded-header navbar-expand-lg navbar-light">
+    <div class="m-header">
+        <a class="mobile-menu" id="mobile-collapse1" href="#"><span></span></a>
+        <a href="/" class="b-brand">
+            <img src="{% static 'images/sidebar/logo.svg' %}" width="150px" height="150px"/>
+        </a>
+    </div>
+    <a class="mobile-menu" id="mobile-header" href="#">
+        <i class="feather icon-more-horizontal"></i>
+    </a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto col-md-6">
+            {% if show_search_bar %}
+                <form>
+                    <li class="form-group has-search" id="client-search-elem">
+                        <span class="form-control-feedback">
+                            <img type="image" alt="search-button"
+                                 src="{% static 'images/menu/search.svg' %}" style="width: 15px; height: 15px;"/>
+                        </span>
+                        <input id="search-input-header" type="search" class="form-control" placeholder="Search" value="{% if keyword %}{{ keyword }}{% endif %}" name="q">
+                    </li>
+                </form>
+            {% endif %}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        {% if show_client_dropdown %}
+            <li class="nav-item dropdown mr-2 client-control">
+                {% if available_clients %}
+                    {% if disable_dropdown %}
+                        <a class="dropdown-toggle">
+                            <span class="client-bar {% if request.session.client_name %} already-selected {% else %} not-selected {% endif %}">
+                                {% if request.session.client_name %}{{ request.session.client_name }} {% else %} Please select a client {% endif %}
+                            </span>
+                        </a>
+                    {% else %}
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span class="client-bar {% if request.session.client_name %} already-selected {% else %} not-selected {% endif %}">
+                                {% if request.session.client_name %}{{ request.session.client_name }} {% else %} Please select a client {% endif %}
+                            </span>
+                            <span style="margin-right: 15px; float: right;" class="client-select-icon">▾</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-right client-items">
+                            {% for client in available_clients %}
+                            <li {% if request.session.client_id == client.id %}style="background-color: aliceblue;"{% endif %}>
+                                <a class="dropdown-item font-weight-light" href="{% url 'change-client' client.id %}">{{ client.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+
+                {% else %}
+                No client available
+                {% endif %}
+            </li>
+        {% endif %}
+            <li>
+                <div class="nav-item dropdown drp-user">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span style="font-size: 14px; color: #A0AFBE; font-weight: normal; margin-right: 8px;">{{ request.user.username }}</span>
+                        <span class="logout-show-icon" style="margin-right: 15px; float: right;" >▾</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right profile-notification">
+                        <a href="{% url 'authen:logout' %}">
+                            <div class="pro-head">
+                                Log out
+                                <span class="dud-logout" title="Logout">
+                                    <i class="feather icon-log-out"></i>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</header>
