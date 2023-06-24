@@ -1,0 +1,102 @@
+html {
+    height: 100%;
+}
+body {
+    background-color: white;
+    height: 100%;
+}
+.form-group .form-control.form-control-user {
+    border: none ;
+    background-color: white;
+    padding: 5px 0px;
+}
+.form-group .form-control.form-control-user:focus {
+    box-shadow: none;
+}
+.input-group-text {
+    border: none;
+    background: white !important;
+}
+.form-group.data-input-wrapper {
+    border-bottom: 1px solid #D3D8DD;
+    width: 300px;
+    margin-bottom: 1.5rem;
+}
+.form-control.form-control-user.data-input {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    width: 300px;
+    letter-spacing: 0.1px;
+    color: #323C47;
+}
+.login-btn {
+    width: 160px;
+    background-color: #0041ED;
+    margin-right: 0px;
+    margin-top: 24px
+}
+.form-wrapper {
+    height: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+}
+.login-form {
+    margin: auto;
+    width: 302px !important;
+}
+.form-check-remember {
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+}
+.check-remember {
+    margin-right: 10px;
+}
+.form-error {
+    color: #dc3545;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 13px;
+}
+.form-field-error {
+    margin-bottom: 15px;
+    margin-top: -15px;
+}
+input {
+    background-color: white;
+}
+.inspecting-eye-icon {
+    color: #0041ED !important;
+}
+.center-elem {
+    text-align: center;
+}
+.form-header {
+    margin-bottom: 24px;
+}
+.form-header h1 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+}
+.hidden-label {
+    display: none;
+}
+.input-label {
+    font-size: 11px;
+    margin-bottom: 0px;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: #A0AFBE;
+}
+.form-group.data-input-wrapper:focus-within .input-label {
+    color: #0041ED;
+}
+.form-group.data-input-wrapper:focus-within {
+    border-bottom: 1px solid #818E9B;
+}

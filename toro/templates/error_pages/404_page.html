@@ -1,0 +1,28 @@
+{% extends "layouts/general_layout_fullscreen.html" %}
+
+{% block title %} 404 Page {% endblock %}
+
+{% block content %}
+
+    <div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="card rounded shadow-3">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <i class="feather x-circle"></i>
+                    </div>
+                    <h3 class="mb-4 text-danger">Page not found!</h3>
+
+                    <br />
+
+                    <span class="mb-0 text-muted">
+                        <h5>Error 404</h5> <br>
+                        <a href="/">Back to Home</a>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

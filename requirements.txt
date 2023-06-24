@@ -31,3 +31,4 @@ toml==0.10.2
 Unipath==1.1
 whitenoise==6.2.0
 coverage==6.5.0
+whitenoise==6.2.0

@@ -1,4 +1,11 @@
-### Toro Django Office
+<h2> Toro Django Office </h2>
+
+<p align="left">
+    <a href="#">
+        <img src="https://img.shields.io/badge/python-%3E=v3.10-brightgreen">
+    </a>
+</p>
+<hr/>
 
 ### Prerequisite & Dependencies
 - Python `3.10`
@@ -6,7 +13,7 @@
 
 ## Install pip packages:
 ```bash
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Database
@@ -20,15 +27,15 @@ CREATE DATABASE <database-name> CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 
 ## Migration
 ```bash
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 ## Create a super admin user
 ```bash
-python manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
 
 ## Start Django app
 ```bash
-python manage.py runserver 8000
+python3 manage.py runserver 8000
 ```

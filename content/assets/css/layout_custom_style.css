@@ -1,0 +1,100 @@
+#client-search-elem {
+    padding-right: 15px !important;
+    width: 100%;
+}
+#search-input-header {
+    min-width: 304px;
+    border: none;
+    background: white;
+}
+.form-control:focus {
+    box-shadow: none !important;
+}
+.blue-segment-part {
+    color: #0041ED !important;
+}
+body .pcoded-header .navbar-nav > li:last-child {
+    padding-right: 34px !important;
+}
+body .pcoded-header .dropdown .dropdown-toggle {
+    padding-right: 0px;
+}
+.pcoded-header .dropdown.client-control .dropdown-toggle {
+    line-height: 40px;
+    border: 1px solid #A0AFBE;
+    border-radius: 4px;
+    width: 260px;
+    margin-top: 10px;
+}
+.pcoded-header .dropdown.client-control .client-bar {
+    margin-left: 20px;
+    width:100px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.pcoded-header .dropdown.client-control .client-bar.not-selected {
+    color: #A0AFBE;
+}
+.pcoded-header .dropdown.client-control .client-bar.already-selected {
+    color: #707683;
+    width: 75%;
+    white-space: nowrap;
+    float: left;
+}
+.pcoded-header .dropdown.client-control.show .dropdown-toggle {
+    border: 1px solid #0041ED;
+    border-bottom: none;
+    border-radius: 4px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.client-select-icon {
+    color: #AEAEAE;
+}
+.pcoded-header .dropdown.client-control.show .client-select-icon , .dropdown.drp-user.show .logout-show-icon{
+    color: #0041ED;
+    transform: rotate(180deg);
+}
+.dropdown.drp-user .logout-show-icon {
+    color: #A0AFAE;
+    position: absolute;
+}
+.pcoded-header .dropdown .dropdown-menu.client-items {
+    width: 260px;
+    margin-top: -10px;
+    border: 1px solid #0041ED;
+    border-top: none;
+    border-radius: 4px;
+    border-top: none;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    max-height: 200px;
+    overflow: scroll;
+    padding: 0px;
+    right: auto;
+    box-shadow: none;
+}
+.pcoded-header .dropdown .dropdown-menu.client-items li {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.pcoded-header .dropdown .dropdown-menu.client-items a {
+    min-height: 46px;
+    padding: 10px 0px;
+    line-height: 26px;
+    color: #323C47;
+    word-break: break-all;
+    white-space: normal;
+}
+
+.pcoded-header .dropdown .dropdown-menu.client-items a:hover {
+    background-color: #F4F7FA !important;
+    color: #323C47;
+}
+.pcoded-header .dropdown .dropdown-menu.client-items li:hover {
+    background-color: #F4F7FA !important;
+    border-radius: 4px;
+}
+body .pcoded-header .dropdown.show.client-control:before {
+    content: "";
+}

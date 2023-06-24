@@ -1,0 +1,94 @@
+.create-btn {
+    width: 120px;
+    height: 42px;
+    float: right;
+    margin-right: 0px;
+}
+.segment-title-header {
+    margin-bottom: 2px;
+}
+.item-btn.disabled {
+    background-color: #C3CFDB !important;
+    border-color: #C3CFDB !important;
+    opacity: 1 !important;
+    white-space: normal !important;
+    width: 20%;
+    margin-bottom: 11px;
+    margin-right: 16px;
+    font-size: 12px;
+}
+table {
+    margin-bottom: 0 !important;
+}
+td {
+    white-space: unset !important;
+    vertical-align: middle !important;
+}
+.table-container table thead tr > th, thead > tr > th > a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #A0AFBE !important;
+}
+.table-container table tbody tr > td {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    color: #323C47;
+    word-break: break-all;
+    white-space: nowrap;
+}
+.delete-action-form {
+    display: inline-flex;
+    float: right;
+}
+td a span img.edit-icon:hover, .delete-action-form .pcoded-micon .delete-icon:hover {
+    filter: invert(23%) sepia(89%) saturate(7492%) hue-rotate(227deg) brightness(92%) contrast(104%);
+    cursor: pointer;
+}
+
+.delete-icon {
+    margin-bottom: 1px;
+}
+
+table thead th.action-header {
+    width: 75px;
+}
+
+.nav-tabs .tablist-item {
+    margin: 0;
+}
+
+.nav-tabs .tab-link {
+    color: #A0AFBE;
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding: 32px 22px 23px 22px;
+    height: auto;
+    line-height: 28px;
+    background-color: white;
+    border: none !important;
+}
+
+.nav-tabs .tab-link.active {
+    color: #0041ED;
+    box-shadow: none;
+    border-width: 0 0 2px 0 !important;
+    border-bottom-color: #0041ED !important;
+    border-style: solid !important;
+}
+
+.nav-tabs .tab-link:hover {
+    color: #628DFF;
+}
+
+.card {
+    border-radius: 4px;
+}
+
+.tab-pane th {
+    border-top-width: 0;
+}

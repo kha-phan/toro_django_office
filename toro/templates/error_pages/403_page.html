@@ -1,0 +1,29 @@
+{% extends "layouts/general_layout_fullscreen.html" %}
+
+{% block title %} 403 Page {% endblock %}
+
+{% block content %}
+
+    <div class="auth-wrapper">
+        <div class="auth-content">
+            <div class="card rounded shadow-3">
+                <div class="card-body text-center">
+                    <div class="mb-4">
+                        <i class="feather x-circle"></i>
+                    </div>
+                    <h3 class="mb-4 text-danger">You don't have permission to access this page.</h3>
+                    <p>{{ exception_msg }}</p>
+                    <br />
+                    {% include "layouts/message.html" %}
+                    <span class="mb-0 text-muted">
+                        <h5>403 Forbidden</h5> <br>
+                        <p>Contact admin for the required permissions</p>
+                        <a href="/">Back to Home</a>
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
