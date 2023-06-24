@@ -3,8 +3,9 @@
     <div class="navbar-wrapper">
         <div class="navbar-brand header-logo">
             <a href="/" class="b-brand">
-                <img src="{% static 'images/sidebar/logo.svg' %}" width="150px" height="150px"/>
+                <img src="{% static 'images/sidebar/rainy.jpeg' %}" width="100px" height="100px"/>
             </a>
+            Rainee
         </div>
 
         <div class="navbar-content scroll-div">
@@ -28,21 +29,21 @@
                             </span>
                             <span class="pcoded-mtext">Users & Permissions</span>
                         </a>
-                        <ul class="pcoded-submenu">
-                            {% if perms.auth.view_role %}
-                                <div class="menu-breaker"></div>
-                                <li class="submenu-item {% if segment.submenu == 'Roles' %}selected{% endif %}">
-                                    <a href="{% url 'view-role' %}" class="">Roles</a>
-                                </li>
-                            {% endif %}
-
-                            {% if perms.auth.view_user %}
-                                <div class="menu-breaker"></div>
-                                <li class="submenu-item {% if segment.submenu == 'Users' %}selected{% endif %}">
-                                    <a href="{% url 'view-user' %}" class="">Users</a>
-                                </li>
-                           {% endif %}
-                      </ul>
+{#                        <ul class="pcoded-submenu">#}
+{#                            {% if perms.auth.view_role %}#}
+{#                                <div class="menu-breaker"></div>#}
+{#                                <li class="submenu-item {% if segment.submenu == 'Roles' %}selected{% endif %}">#}
+{#                                    <a href="{% url 'view-role' %}" class="">Roles</a>#}
+{#                                </li>#}
+{#                            {% endif %}#}
+{##}
+{#                            {% if perms.auth.view_user %}#}
+{#                                <div class="menu-breaker"></div>#}
+{#                                <li class="submenu-item {% if segment.submenu == 'Users' %}selected{% endif %}">#}
+{#                                    <a href="{% url 'view-user' %}" class="">Users</a>#}
+{#                                </li>#}
+{#                           {% endif %}#}
+{#                      </ul>#}
                     </li>
                 {% endif %}
 
