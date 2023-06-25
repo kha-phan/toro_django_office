@@ -1,0 +1,59 @@
+{% extends "layouts/general_layout.html" %}
+{% load crispy_forms_filters %}
+{% load bootstrap4 %}
+{% load static %}
+
+{% block  stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/common_pageview/detail_form.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/widgets.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/responsive.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                {% include "layouts/top_content.html" with segment=segment %}
+                {% include "layouts/message.html" %}
+                <div class="page-wrapper">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="detail-form-header">
+                                    <h1>{{ form_title }}</h1>
+                                </div>
+                                <div class="card-block">
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <div class="d-flex flex-column">
+                                            {{ form | crispy }}
+                                            <div class="btn-holder mt-3 centered">
+                                                <a href="{{ cancel_url }}">
+                                                    <button class="btn btn-primary btn-orange"
+                                                            type="button">
+                                                        Cancel
+                                                    </button>
+                                                </a>
+                                                <button id="submit-btn" class="btn btn-primary disabled"
+                                                        type="button" value="save">
+                                                    Save
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+    <script type="text/javascript" src="{% static 'js/common_pageview/DetailPageControl.js' %}"></script>
+{% endblock javascripts %}

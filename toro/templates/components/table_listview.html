@@ -1,0 +1,28 @@
+{% extends 'layouts/general_layout.html' %}
+{% load static %}
+{% load render_table from django_tables2 %}
+
+{% block  stylesheets %}
+<link rel="stylesheet" href="{% static 'css/common_pageview/list_view.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                {% include "layouts/top_content.html" with segment=segment %}
+                {% include "layouts/message.html" %}
+                <div class="page-wrapper">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                {% render_table table 'django_tables2/bootstrap4.html' %}                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

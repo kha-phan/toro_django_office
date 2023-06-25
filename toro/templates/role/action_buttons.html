@@ -1,0 +1,13 @@
+{% load static %}
+    {% if perms.auth.change_role %}
+        <a href="{% url 'update-role' pk=record.id %}"><span class="pcoded-micon"><img class="menu-item-icon edit-icon" src="{% static 'images/actions/pencil.svg' %}"/></span></a>
+    {% endif %}
+    {% if perms.auth.delete_role %}
+    <form action="{% url 'delete-role' pk=record.id %}" method="POST" class="ml-2 delete-action-form">
+        {% csrf_token %}
+        <button type="submit" style="border: none; background: white;"
+        onclick="return confirm('Are you sure you want to delete this role?');">
+            <span class="pcoded-micon"><img class="menu-item-icon delete-icon" src="{% static 'images/actions/trashbin.svg' %}"/></span>
+        </button>
+    </form>
+    {% endif %}

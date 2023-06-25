@@ -1,0 +1,57 @@
+{% extends 'layouts/general_layout.html' %}
+{% load static %}
+{% load render_table from django_tables2 %}
+
+{% block  stylesheets %}
+    <link rel="stylesheet" href="{% static 'css/common_pageview/list_view.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <div class="main-body">
+                {% include "layouts/top_content.html" with segment=segment %}
+                {% include "layouts/message.html" %}
+                <div class="page-wrapper">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    {% for table in tables %}
+                                        <li class="nav-item tablist-item" role="presentation">
+                                            <a class="nav-link tab-link{% if tab|lower == table.prefix|lower or not tab and forloop.first %} active{% endif %}"
+                                               id="{{ table.prefix }}-tab"
+                                               data-toggle="tab"
+                                               href="#{{ table.prefix }}-tab-content"
+                                               type="button"
+                                               role="tab"
+                                               aria-controls="tab-{{ table.prefix }}"
+                                               aria-selected="false">{{ table.prefix }}</a>
+                                        </li>
+                                    {% empty %}
+                                        <p>{{ no_tabs_message }}</p>
+                                    {% endfor %}
+                                </ul>
+                                <div class="tab-content">
+                                    {% for table in tables %}
+                                        <div class="tab-pane fade{% if tab|lower == table.prefix|lower or not tab and forloop.first %} show active{% endif %}" id="{{ table.prefix }}-tab-content"
+                                             role="tabpanel" aria-labelledby="{{ table.prefix }}-tab-content">
+                                            <div class="card">
+                                                {% render_table table 'django_tables2/bootstrap4.html' %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+    <script src="{% static 'js/common_pageview/tabsURL.js' %}"></script>
+{% endblock javascripts %}
